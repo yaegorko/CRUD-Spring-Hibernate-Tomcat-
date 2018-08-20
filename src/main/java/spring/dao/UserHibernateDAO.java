@@ -1,17 +1,23 @@
 package spring.dao;
 
+import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 import spring.model.User;
 
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
+@Component
 public class UserHibernateDAO implements UserDAO<User> {
 
     @PersistenceContext
     private SessionFactory sessionFactory;
+
 
     private Session getSession() {
         return this.sessionFactory.openSession();
@@ -19,7 +25,7 @@ public class UserHibernateDAO implements UserDAO<User> {
 
     @Override
     public void addNewUser(User user) {
-
+        getSession().save(user);
     }
 
     @Override
@@ -38,7 +44,9 @@ public class UserHibernateDAO implements UserDAO<User> {
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public List<User> getAllUsers() {
+     ///   Criteria criteria = getSession().createCriteria(User.class);
         return null;
     }
 

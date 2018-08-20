@@ -1,10 +1,28 @@
 package spring.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+import spring.dao.UserDAO;
+import spring.dao.UserHibernateDAO;
 import spring.model.User;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
+@Service
+@Transactional
 public class UserServiceImpl implements UserService<User> {
+
+    final  UserDAO userDAO;
+
+    @Autowired
+    public UserServiceImpl(UserDAO userDAO) {
+        this.userDAO = userDAO;
+    }
+
+
     @Override
     public void add(User user) {
 
@@ -27,7 +45,7 @@ public class UserServiceImpl implements UserService<User> {
 
     @Override
     public List<User> getAllUsers() {
-        return null;
+        return userDAO.getAllUsers();
     }
 
     @Override

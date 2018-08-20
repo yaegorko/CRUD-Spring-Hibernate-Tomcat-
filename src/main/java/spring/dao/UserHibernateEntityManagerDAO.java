@@ -1,6 +1,7 @@
 package spring.dao;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 import spring.model.User;
 
 import javax.persistence.EntityManager;
@@ -13,11 +14,10 @@ public class UserHibernateEntityManagerDAO implements UserDAO {
     @PersistenceContext
     private EntityManager entityManager;
 
+    @Transactional
     @Override
     public void addNewUser(User user) {
-        entityManager.getTransaction().begin();
         entityManager.persist(user);
-        entityManager.getTransaction().commit();
     }
 
     @Override
@@ -34,8 +34,8 @@ public class UserHibernateEntityManagerDAO implements UserDAO {
     }
 
     @Override
-    public void updateUser(User t) {
-
+    public void updateUser(User user) {
+        entityManager.merge(user);
     }
 
     @Override
@@ -46,6 +46,6 @@ public class UserHibernateEntityManagerDAO implements UserDAO {
 
     @Override
     public void deleteUserById(int id) {
-
+        entityManager.remove(geUserUserById(id));
     }
 }

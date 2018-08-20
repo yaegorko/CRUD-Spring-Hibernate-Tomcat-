@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import spring.dao.UserDAO;
 import spring.model.User;
+
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -36,7 +37,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void updateUser(User user) {
-
+        userDAO.updateUser(user);
     }
 
     @Override
@@ -45,7 +46,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void deleteUser(int i) {
-
+    public void deleteUser(int id) {
+        userDAO.deleteUserById(id);
     }
 }

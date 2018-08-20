@@ -25,14 +25,14 @@
             <td>${list.id}</td>
             <td>${list.name}</td>
             <td>${list.password}</td>
-            <form method="post" action="/update">
+            <form method="get" action="/update">
                 <td>
-                    <button type="submit" name="update" value=${list.id}> Update</button>
+                    <button type="submit" name="update" value=${list.id}>Update</button>
                 </td>
             </form>
-            <form method="post" action="/admin/delete">
+            <form method="post" action="delete">
                 <td>
-                    <button type="submit" name="delete" value=${list.id}> Delete</button>
+                    <button type="submit" name="delete" value=${list.id}>Delete</button>
                 </td>
             </form>
         </tr>
@@ -40,7 +40,7 @@
     </tbody>
 </table>
 <table>
-    <form method="post" action="/create">
+    <form method="get" action="/create">
         <tr>
             <td>
                 <button type="submit" name="create">Add new user</button>

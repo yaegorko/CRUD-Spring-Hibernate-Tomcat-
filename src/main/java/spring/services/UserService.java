@@ -5,10 +5,10 @@ import spring.model.User;
 import java.util.List;
 
 public interface UserService {
-    void add(User t);
+    void add(User user);
     User getById(int id);
     User getByName(String name);
-    void updateUser(User t);
+    void updateUser(User user);
     List<User> getAllUsers();
-    void deleteUser(int i);
+    void deleteUser(int id);
 }

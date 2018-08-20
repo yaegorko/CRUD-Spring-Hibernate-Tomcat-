@@ -1,12 +1,14 @@
 package spring.dao;
 
+import spring.model.User;
+
 import java.util.List;
 
-public interface UserDAO<T> {
-    void addNewUser(T t);
-    T getUserById(int id);
-    T getUserByName(String name);
-    void updateUser(T t);
-    List<T> getAllUsers();
+public interface UserDAO {
+    void addNewUser(User user);
+    User geUserUserById(int id);
+    User getUserByName(String name);
+    void updateUser(User t);
+    List<User> getAllUsers();
     void deleteUserById(int id);
 }

@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "forspring")
+@Table(name = "users")
 public class User implements Serializable {
     @Id
     @Column(name = "id")
@@ -14,11 +14,10 @@ public class User implements Serializable {
     private String name;
     @Column(name = "password")
     private String password;
-//    @Column(name = "role")
-//    private String role;
+    @Column(name = "role")
+    private String role;
 
-    public User(int id,
-                String name, String password) {
+    public User(int id, String name, String password) {
         this.id = id;
         this.name = name;
         this.password = password;
@@ -56,11 +55,11 @@ public class User implements Serializable {
         this.password = password;
     }
 
-//    public String getRole() {
-//        return role;
-//    }
-//
-//    public void setRole(String role) {
-//        this.role = role;
-//    }
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 }

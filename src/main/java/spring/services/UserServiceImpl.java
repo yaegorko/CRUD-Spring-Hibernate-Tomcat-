@@ -1,21 +1,17 @@
 package spring.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import spring.dao.UserDAO;
-import spring.dao.UserHibernateDAO;
 import spring.model.User;
-
 import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
 @Transactional
-public class UserServiceImpl implements UserService<User> {
+public class UserServiceImpl implements UserService {
 
-    final  UserDAO userDAO;
+    private UserDAO userDAO;
 
     @Autowired
     public UserServiceImpl(UserDAO userDAO) {
@@ -30,7 +26,7 @@ public class UserServiceImpl implements UserService<User> {
 
     @Override
     public User getById(int id) {
-        return null;
+        return userDAO.geUserUserById(id);
     }
 
     @Override

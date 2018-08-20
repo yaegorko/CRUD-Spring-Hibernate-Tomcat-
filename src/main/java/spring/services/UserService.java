@@ -1,12 +1,14 @@
 package spring.services;
 
+import spring.model.User;
+
 import java.util.List;
 
-public interface UserService<T> {
-    void add(T t);
-    T getById(int id);
-    T getByName(String name);
-    void updateUser(T t);
-    List<T> getAllUsers();
+public interface UserService {
+    void add(User t);
+    User getById(int id);
+    User getByName(String name);
+    void updateUser(User t);
+    List<User> getAllUsers();
     void deleteUser(int i);
 }

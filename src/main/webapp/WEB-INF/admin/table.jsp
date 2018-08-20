@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
@@ -24,7 +25,7 @@
             <td>${list.id}</td>
             <td>${list.name}</td>
             <td>${list.password}</td>
-            <form method="get" action="/admin/update">
+            <form method="post" action="/update">
                 <td>
                     <button type="submit" name="update" value=${list.id}> Update</button>
                 </td>
@@ -39,9 +40,11 @@
     </tbody>
 </table>
 <table>
-    <form method="get" action="/admin/create">
+    <form method="get" action="/create">
         <tr>
-            <td><button type="submit" name="create">Add new user</button></td>
+            <td>
+                <button type="submit" name="create">Add new user</button>
+            </td>
         </tr>
     </form>
 </table>

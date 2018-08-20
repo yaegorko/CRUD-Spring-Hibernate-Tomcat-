@@ -15,7 +15,9 @@ public class UserHibernateEntityManagerDAO implements UserDAO {
 
     @Override
     public void addNewUser(User user) {
-
+        entityManager.getTransaction().begin();
+        entityManager.persist(user);
+        entityManager.getTransaction().commit();
     }
 
     @Override

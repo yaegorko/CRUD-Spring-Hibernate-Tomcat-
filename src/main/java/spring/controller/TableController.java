@@ -41,9 +41,12 @@ public class TableController {
         return "admin/create";
     }
 
-    @RequestMapping(value = "/create", method = RequestMethod.GET)
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
     public String createUser(Model model) {
-
+        String action = "Create";
+        model.addAttribute("string", action);
+        String suffix = "new user";
+        model.addAttribute("suffix", suffix);
         return "admin/create";
     }
 }

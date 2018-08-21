@@ -2,6 +2,7 @@ package spring.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -14,7 +15,7 @@ public class User implements Serializable {
     private String name;
     @Column(name = "password")
     private String password;
-    @Column(name = "role")
+
     private String role;
 
     public User(int id, String name, String password) {
@@ -29,6 +30,20 @@ public class User implements Serializable {
     }
 
     public User() {
+    }
+
+    @ManyToMany
+    @JoinTable(name = "users_roles",
+            joinColumns = {@JoinColumn(name = "user_id")},
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Set<Role> roles;
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 
     public int getId() {

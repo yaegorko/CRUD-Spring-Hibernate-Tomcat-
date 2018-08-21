@@ -27,10 +27,10 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 //    }
 
 
-    @Override
-    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
-        super.configureMessageConverters(converters);
-    }
+//    @Override
+//    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+//        super.configureMessageConverters(converters);
+//    }
 
     @Bean
     public InternalResourceViewResolver resolver() {

@@ -8,7 +8,7 @@
 </head>
 <body>
 <b> <c:out value="${string}"/> <c:out value="${suffix}"/> </b>
-<form method="post" accept-charset="UTF-8" action="/${string.toLowerCase()}">
+<form method="post" accept-charset="UTF-8" action="admin/${string.toLowerCase()}">
     <input type="hidden" name="id" value=${user.id}>
     Enter User Name <input type="text" name="name" value=${user.name}> <br>
     Enter Password <input type="text" name="password" value=${user.password}> <br>

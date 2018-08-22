@@ -2,6 +2,7 @@ package spring.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import spring.dao.RoleDAO;
 import spring.dao.UserDAO;
 import spring.model.User;
 
@@ -12,12 +13,16 @@ import java.util.List;
 @Transactional
 public class UserServiceImpl implements UserService {
 
-    private UserDAO userDAO;
+    private final UserDAO userDAO;
+    private final RoleDAO roleDAO;
+
 
     @Autowired
-    public UserServiceImpl(UserDAO userDAO) {
+    public UserServiceImpl(UserDAO userDAO, RoleDAO roleDAO) {
         this.userDAO = userDAO;
+        this.roleDAO = roleDAO;
     }
+
 
 
     @Override
@@ -27,12 +32,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getById(int id) {
-        return userDAO.geUserUserById(id);
+        return userDAO.getUserUserById(id);
     }
 
     @Override
     public User getByName(String name) {
-        return null;
+        return userDAO.getUserByName(name);
     }
 
     @Override

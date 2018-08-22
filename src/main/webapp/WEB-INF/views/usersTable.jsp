@@ -40,7 +40,7 @@
     </tbody>
 </table>
 <table>
-    <form method="get" action="/create">
+    <form method="post" action="createNew">
         <tr>
             <td>
                 <button type="submit" name="create">Add new user</button>

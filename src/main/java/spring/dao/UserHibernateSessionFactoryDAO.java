@@ -31,7 +31,7 @@ public class UserHibernateSessionFactoryDAO implements UserDAO {
     }
 
     @Override
-    public User geUserUserById(int id) {
+    public User getUserUserById(int id) {
         return null;
     }
 

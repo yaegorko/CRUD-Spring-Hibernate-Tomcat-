@@ -28,7 +28,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     public InternalResourceViewResolver resolver() {
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
         resolver.setViewClass(JstlView.class);
-        resolver.setPrefix("WEB-INF/views/");
+        resolver.setPrefix("/WEB-INF/views/"); // без первого слеша работает криво.
         resolver.setSuffix(".jsp");
         resolver.setExposeContextBeansAsAttributes(true); //This will make all such beans accessible in plain ${...}
         resolver.setContentType("text/html; charset=utf-8");

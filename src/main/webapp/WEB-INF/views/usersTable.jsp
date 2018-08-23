@@ -18,19 +18,18 @@
         <th>Delete</th>
     </tr>
     </thead>
-
     <tbody>
     <c:forEach var="list" items="${list}">
         <tr>
             <td>${list.id}</td>
             <td>${list.name}</td>
             <td>${list.password}</td>
-            <form method="get" action="/update">
+            <form method="get" action="admin/update">
                 <td>
                     <button type="submit" name="update" value=${list.id}>Update</button>
                 </td>
             </form>
-            <form method="post" action="delete">
+            <form method="post" action="admin/delete">
                 <td>
                     <button type="submit" name="delete" value=${list.id}>Delete</button>
                 </td>
@@ -40,7 +39,7 @@
     </tbody>
 </table>
 <table>
-    <form method="post" action="createNew">
+    <form method="post" action="admin/createNew">
         <tr>
             <td>
                 <button type="submit" name="create">Add new user</button>

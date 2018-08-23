@@ -25,7 +25,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     @Qualifier("loginUserService")
-    UserDetailsService loginUserService;
+    private UserDetailsService loginUserService;
 
     @Autowired
     public WebSecurityConfig(CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler) {
@@ -42,7 +42,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/user/**").hasAnyAuthority("USER", "ADMIN")
                 .antMatchers("/admin/**").hasAnyAuthority("ADMIN")
-              //  .antMatchers("/admin/**").hasAnyRole("ADMIN")
+                //  .antMatchers("/admin/**").hasAnyRole("ADMIN")
                 .and().formLogin()
                 .loginPage("/login")
                 .failureUrl("/?error")

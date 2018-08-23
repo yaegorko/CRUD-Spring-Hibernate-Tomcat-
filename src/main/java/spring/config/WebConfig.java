@@ -16,7 +16,7 @@ import java.util.List;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = {"spring"})
-@Import({WebSecurityConfig.class})
+//@Import({WebSecurityConfig.class})
 public class WebConfig extends WebMvcConfigurerAdapter {
 
 //    @Override

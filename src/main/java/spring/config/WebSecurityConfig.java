@@ -18,7 +18,6 @@ import spring.handler.CustomAuthenticationSuccessHandler;
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @ComponentScan(basePackages = {"spring"})
-//@Order(100)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler;

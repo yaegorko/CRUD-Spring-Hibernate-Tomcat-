@@ -16,14 +16,11 @@ public class UserServiceImpl implements UserService {
     private final UserDAO userDAO;
     private final RoleDAO roleDAO;
 
-
     @Autowired
     public UserServiceImpl(UserDAO userDAO, RoleDAO roleDAO) {
         this.userDAO = userDAO;
         this.roleDAO = roleDAO;
     }
-
-
 
     @Override
     public void add(User user) {

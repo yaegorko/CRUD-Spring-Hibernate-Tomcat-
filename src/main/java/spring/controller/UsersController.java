@@ -1,6 +1,5 @@
 package spring.controller;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -16,7 +15,7 @@ import java.util.Set;
 @Controller
 public class UsersController {
 
-    UserService userService;
+    private final UserService userService;
 
     @Autowired
     public UsersController(UserService userService) {
